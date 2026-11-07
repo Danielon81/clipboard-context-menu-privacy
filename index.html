@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Política de privacidad — Clipboard Context Menu</title>
+  <style>
+    :root {
+      --bg: #f6f7fb;
+      --surface: #ffffff;
+      --text: #172033;
+      --muted: #5b6475;
+      --accent: #2563eb;
+      --border: #dfe3ec;
+      --shadow: 0 18px 50px rgba(23, 32, 51, .08);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1420;
+        --surface: #171e2d;
+        --text: #eef2f8;
+        --muted: #aab3c5;
+        --accent: #7ea6ff;
+        --border: #2b3548;
+        --shadow: 0 18px 50px rgba(0, 0, 0, .35);
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      padding: 40px 18px 64px;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.7 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    main {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 44px 48px 52px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow);
+    }
+    .eyebrow {
+      margin: 0 0 10px;
+      color: var(--accent);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(1.8rem, 4vw, 2.45rem);
+      line-height: 1.15;
+      letter-spacing: -.02em;
+    }
+    h2 {
+      margin: 36px 0 10px;
+      font-size: 1.22rem;
+      line-height: 1.3;
+    }
+    h3 {
+      margin: 24px 0 8px;
+      font-size: 1.02rem;
+    }
+    p, li { color: var(--text); }
+    .updated, .muted { color: var(--muted); }
+    .updated { margin: 0 0 28px; font-size: .94rem; }
+    .summary {
+      margin: 28px 0 8px;
+      padding: 18px 20px;
+      border: 1px solid color-mix(in srgb, var(--accent) 32%, var(--border));
+      border-radius: 12px;
+      background: color-mix(in srgb, var(--accent) 7%, var(--surface));
+    }
+    .summary strong { color: var(--accent); }
+    a { color: var(--accent); text-underline-offset: 3px; }
+    ul { padding-left: 1.25rem; }
+    li + li { margin-top: 6px; }
+    .divider {
+      margin: 42px 0 0;
+      border: 0;
+      border-top: 1px solid var(--border);
+    }
+    .lang {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    footer {
+      margin-top: 38px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: .88rem;
+    }
+    code {
+      padding: 2px 6px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: color-mix(in srgb, var(--text) 6%, transparent);
+      font-size: .9em;
+    }
+    @media (max-width: 640px) {
+      body { padding: 16px 10px 32px; }
+      main { padding: 28px 22px 34px; border-radius: 14px; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">Clipboard Context Menu</p>
+  <h1>Política de privacidad</h1>
+  <p class="updated">Última actualización: 7 de noviembre de 2026</p>
+
+  <div class="summary">
+    <strong>Resumen:</strong> la extensión funciona localmente. No tiene servidores propios, cuentas,
+    analíticas ni publicidad. No guarda el texto que copias, cortas o pegas. El texto seleccionado
+    solo se envía a Google si pulsas «Buscar en Google España».
+  </div>
+
+  <h2>1. Responsable</h2>
+  <p>
+    Esta política se aplica a la extensión <strong>Clipboard Context Menu</strong>, publicada por
+    <strong>Daniel Vidal Álvarez</strong> («el desarrollador»). Para cualquier
+    consulta sobre privacidad puedes escribir a
+    <a href="mailto:daniauro@Outlook.com">daniauro@Outlook.com</a>.
+  </p>
+
+  <h2>2. Qué datos trata la extensión</h2>
+  <p>
+    La extensión está diseñada para trabajar con dos tipos de información, siempre como consecuencia
+    de una acción del usuario:
+  </p>
+  <ul>
+    <li>
+      <strong>Texto seleccionado en una página web.</strong> Se usa para mostrar el menú flotante y,
+      si el usuario lo solicita, para copiarlo, cortarlo o buscar ese texto en Google España.
+    </li>
+    <li>
+      <strong>Contenido del portapapeles.</strong> Solo se lee cuando el usuario pulsa «Pegar» y solo
+      se escribe cuando pulsa «Copiar» o «Cortar». El portapapeles puede contener comunicaciones
+      personales u otra información sensible; la extensión no lo inspecciona en segundo plano ni lo
+      almacena.
+    </li>
+  </ul>
+  <p>
+    La extensión no recopila datos de navegación, historial, ubicación, salud, información financiera,
+    credenciales de autenticación ni datos de contacto. Tampoco crea perfiles de usuario.
+  </p>
+
+  <h2>3. Cómo y cuándo se usa el portapapeles</h2>
+  <ul>
+    <li><strong>Copiar:</strong> escribe la selección actual en el portapapeles del sistema.</li>
+    <li><strong>Cortar:</strong> escribe la selección en el portapapeles y la elimina del campo editable.</li>
+    <li><strong>Pegar:</strong> lee el portapapeles únicamente en el momento en que el usuario pulsa esta acción, para insertar el texto en el campo activo.</li>
+  </ul>
+  <p>
+    La extensión no lee el portapapeles al cargar una página, al cambiar de pestaña ni de forma
+    periódica. No guarda un historial de lo copiado o pegado y no envía el contenido del portapapeles
+    a ningún servidor.
+  </p>
+
+  <h2>4. Búsqueda en Google España</h2>
+  <p>
+    La acción «Buscar en Google España» solo se ejecuta si el usuario la pulsa. En ese momento, la
+    extensión construye una URL de búsqueda con el texto seleccionado y abre una pestaña nueva en
+    <code>https://www.google.es/search</code>, utilizando una conexión HTTPS.
+  </p>
+  <p>
+    Como consecuencia de esa búsqueda, Google recibe la consulta y los datos técnicos habituales de
+    una petición web (por ejemplo, dirección IP, tipo de navegador y cookies propias de Google), de
+    acuerdo con su propia política de privacidad:
+    <a href="https://policies.google.com/privacy" rel="noopener noreferrer">https://policies.google.com/privacy</a>.
+    El desarrollador de la extensión no recibe, almacena ni tiene acceso a esa consulta ni a los
+    datos que Google pueda recoger.
+  </p>
+  <p>
+    Si el usuario no pulsa «Buscar en Google España», el texto seleccionado no sale del dispositivo.
+    La extensión no envía datos a servidores del desarrollador en ningún caso.
+  </p>
+
+  <h2>5. Qué no hace la extensión</h2>
+  <ul>
+    <li>No usa analíticas, telemetría, publicidad ni rastreadores.</li>
+    <li>No usa cookies propias, almacenamiento local, bases de datos ni cuentas de usuario.</li>
+    <li>No vende, alquila ni comparte datos con terceros con fines comerciales.</li>
+    <li>No ejecuta código remoto: todo el código está empaquetado en la extensión.</li>
+    <li>No modifica el contenido de las páginas ni accede a formularios que el usuario no esté usando.</li>
+    <li>No funciona en segundo plano para recoger información.</li>
+  </ul>
+
+  <h2>6. Permisos y acceso a las páginas</h2>
+  <p>La extensión declara únicamente los permisos necesarios para su función:</p>
+  <ul>
+    <li><strong><code>clipboardRead</code>:</strong> leer el portapapeles cuando el usuario pulsa «Pegar».</li>
+    <li><strong><code>clipboardWrite</code>:</strong> escribir en el portapapeles cuando el usuario pulsa «Copiar» o «Cortar».</li>
+    <li>
+      <strong>Acceso a páginas web (<code>&lt;all_urls&gt;</code>):</strong> el menú debe poder aparecer
+      en cualquier página donde el usuario seleccione texto. El content script solo utiliza la
+      selección visible y el campo enfocado en el momento de la interacción; no recopila el contenido
+      de la página ni lo transmite.
+    </li>
+  </ul>
+
+  <h2>7. Conservación y seguridad</h2>
+  <p>
+    La extensión no almacena datos de usuario. La información existe solo en memoria durante la
+    operación solicitada y se descarta al terminar. Las comunicaciones con Google se realizan mediante
+    HTTPS. El código se distribuye empaquetado y no se cargan scripts remotos.
+  </p>
+
+  <h2>8. Terceros</h2>
+  <p>
+    El único tercero que puede recibir datos como consecuencia de una acción del usuario es Google,
+    cuando se pulsa «Buscar en Google España». La extensión no integra otros servicios, SDK de
+    analítica, redes publicitarias ni procesadores de pago.
+  </p>
+
+  <h2>9. Uso limitado de datos</h2>
+  <p>
+    El uso de la información se limita a proporcionar la función única de la extensión: mostrar un
+    menú flotante con acciones para el texto seleccionado. La información no se utiliza para
+    publicidad personalizada, elaboración de perfiles, evaluación crediticia ni ningún fin no
+    relacionado con esa función. No se vende ni se transfiere a terceros, salvo la consulta que el
+    usuario envía voluntariamente a Google al pulsar «Buscar en Google España».
+  </p>
+  <p>
+    Estas prácticas son coherentes con la política de uso limitado de datos de Chrome Web Store y con
+    los requisitos de privacidad de Microsoft Edge Add-ons.
+  </p>
+
+  <h2>10. Derechos y contacto</h2>
+  <p>
+    Como la extensión no almacena datos personales, el desarrollador no mantiene una base de datos
+    sobre la que ejercer derechos de acceso, rectificación o supresión. Si resides en el Espacio
+    Económico Europeo o en otra jurisdicción con derechos de protección de datos, puedes contactar en
+    <a href="mailto:daniauro@Outlook.com">daniauro@Outlook.com</a> para plantear cualquier duda sobre
+    esta política. También puedes presentar una reclamación ante la autoridad de protección de datos
+    de tu país.
+  </p>
+
+  <h2>11. Cambios en esta política</h2>
+  <p>
+    Si la extensión cambia sus prácticas de datos, esta política se actualizará y se indicará la nueva
+    fecha al principio. Los cambios importantes se comunicarán en la ficha de la extensión o en las
+    notas de la versión.
+  </p>
+
+  <hr class="divider">
+  <p class="lang">English version below.</p>
+
+  <h2>Privacy Policy (English)</h2>
+  <p class="updated">Last updated: November 7, 2026</p>
+  <p>
+    <strong>Clipboard Context Menu</strong> is published by
+    <strong>Daniel Vidal Álvarez</strong>. Contact:
+    <a href="mailto:daniauro@Outlook.com">daniauro@Outlook.com</a>.
+  </p>
+  <p>
+    The extension runs locally. It has no developer-operated servers, accounts, analytics, or
+    advertising. It does not store the text you copy, cut, or paste.
+  </p>
+  <ul>
+    <li>
+      <strong>Selected text:</strong> used to show the floating menu and, only when you choose it, to
+      copy, cut, or search the selected text on Google Spain.
+    </li>
+    <li>
+      <strong>Clipboard:</strong> read only when you click Paste, and written only when you click Copy
+      or Cut. The extension does not monitor the clipboard in the background or keep a history.
+    </li>
+    <li>
+      <strong>Google search:</strong> when you click “Search on Google Spain”, the selected text is
+      sent to <code>https://www.google.es</code> over HTTPS as a search query. Google processes that
+      query under its own privacy policy:
+      <a href="https://policies.google.com/privacy" rel="noopener noreferrer">https://policies.google.com/privacy</a>.
+      The developer does not receive or store the query.
+    </li>
+  </ul>
+  <p>
+    The extension does not use analytics, telemetry, ads, tracking, cookies, local storage, or remote
+    code. It does not sell or share data. Its use of information is limited to providing the
+    extension’s single purpose: a floating menu of actions for selected text. The only third party
+    that may receive data is Google, and only when the user explicitly requests a search.
+  </p>
+  <p>
+    Because the extension stores no personal data, there is no developer-held database to access,
+    correct, or delete. For privacy questions, contact
+    <a href="mailto:daniauro@Outlook.com">daniauro@Outlook.com</a>.
+  </p>
+
+  <footer>
+    © 2026 Daniel Vidal Álvarez. Todos los derechos reservados.
+  </footer>
+</main>
+</body>
+</html>
