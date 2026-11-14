@@ -115,31 +115,33 @@
 <main>
   <p class="eyebrow">Clipboard Context Menu</p>
   <h1>Política de privacidad</h1>
-  <p class="updated">Última actualización: 7 de noviembre de 2026</p>
+  <p class="updated">Última actualización: 14 de noviembre de 2026</p>
 
   <div class="summary">
     <strong>Resumen:</strong> la extensión funciona localmente. No tiene servidores propios, cuentas,
-    analíticas ni publicidad. No guarda el texto que copias, cortas o pegas. El texto seleccionado
-    solo se envía a Google si pulsas «Buscar en Google España».
+    analíticas ni publicidad. No guarda el texto que copias, cortas, borras o pegas. Solo guarda en
+    el dispositivo tus preferencias de acciones. El texto seleccionado solo se envía al buscador
+    predeterminado de tu navegador si pulsas «Buscar».
   </div>
 
   <h2>1. Responsable</h2>
   <p>
     Esta política se aplica a la extensión <strong>Clipboard Context Menu</strong>, publicada por
-    <strong>Daniel Vidal Álvarez</strong> («el desarrollador»). Para cualquier
+    <strong>Access Apps Labs</strong> («el desarrollador»). Para cualquier
     consulta sobre privacidad puedes escribir a
-    <a href="mailto:daniauro@Outlook.com">daniauro@Outlook.com</a>.
+    <a href="mailto:accesapps@outlook.es">accesapps@outlook.es</a>.
   </p>
 
   <h2>2. Qué datos trata la extensión</h2>
   <p>
-    La extensión está diseñada para trabajar con dos tipos de información, siempre como consecuencia
-    de una acción del usuario:
+    La extensión está diseñada para trabajar con cinco tipos de información, siempre como
+    consecuencia de una acción del usuario:
   </p>
   <ul>
     <li>
       <strong>Texto seleccionado en una página web.</strong> Se usa para mostrar el menú flotante y,
-      si el usuario lo solicita, para copiarlo, cortarlo o buscar ese texto en Google España.
+      si el usuario lo solicita, para copiarlo, cortarlo, borrarlo o buscarlo con el buscador
+      predeterminado del navegador.
     </li>
     <li>
       <strong>Contenido del portapapeles.</strong> Solo se lee cuando el usuario pulsa «Pegar» y solo
@@ -147,47 +149,67 @@
       personales u otra información sensible; la extensión no lo inspecciona en segundo plano ni lo
       almacena.
     </li>
+    <li>
+      <strong>URL de la página actual.</strong> Solo se lee cuando el usuario pulsa «Compartir
+      página», para copiarla al portapapeles. No se envía al desarrollador ni a ningún servidor.
+    </li>
+    <li>
+      <strong>Preferencias de acciones.</strong> El panel de ajustes guarda en el dispositivo qué
+      botones quieres ver y en qué orden (Copiar, Cortar, Pegar, Buscar, Compartir página y Borrar).
+      Es una configuración técnica, no contiene texto copiado, selecciones, historial ni datos
+      personales.
+    </li>
+    <li>
+      <strong>Mensaje de soporte.</strong> Si usas el formulario de «Soporte técnico», se envían el
+      asunto y el mensaje que escribas y, solo si lo rellenas, tu correo electrónico. Estos datos se
+      transmiten únicamente al pulsar «Enviar mensaje» y se usan exclusivamente para responderte o
+      corregir la incidencia.
+    </li>
   </ul>
   <p>
-    La extensión no recopila datos de navegación, historial, ubicación, salud, información financiera,
-    credenciales de autenticación ni datos de contacto. Tampoco crea perfiles de usuario.
+    La extensión no recopila datos de navegación, historial, ubicación, salud, información financiera
+    ni credenciales de autenticación, y no crea perfiles de usuario. El único dato de contacto que
+    puede recibir es el correo que el usuario escriba voluntariamente en el formulario de soporte.
   </p>
 
-  <h2>3. Cómo y cuándo se usa el portapapeles</h2>
+  <h2>3. Cómo se usan las acciones de edición</h2>
   <ul>
     <li><strong>Copiar:</strong> escribe la selección actual en el portapapeles del sistema.</li>
     <li><strong>Cortar:</strong> escribe la selección en el portapapeles y la elimina del campo editable.</li>
     <li><strong>Pegar:</strong> lee el portapapeles únicamente en el momento en que el usuario pulsa esta acción, para insertar el texto en el campo activo.</li>
+    <li><strong>Compartir página:</strong> copia la URL de la pestaña actual en el portapapeles local. No abre ninguna petición de red.</li>
+    <li><strong>Borrar:</strong> elimina la selección del campo editable sin escribirla en el portapapeles.</li>
   </ul>
   <p>
     La extensión no lee el portapapeles al cargar una página, al cambiar de pestaña ni de forma
-    periódica. No guarda un historial de lo copiado o pegado y no envía el contenido del portapapeles
-    a ningún servidor.
+    periódica. No guarda un historial de lo copiado, pegado, compartido o borrado y no envía el
+    contenido del portapapeles ni la URL compartida a ningún servidor.
   </p>
 
-  <h2>4. Búsqueda en Google España</h2>
+  <h2>4. Búsqueda con el motor predeterminado</h2>
   <p>
-    La acción «Buscar en Google España» solo se ejecuta si el usuario la pulsa. En ese momento, la
-    extensión construye una URL de búsqueda con el texto seleccionado y abre una pestaña nueva en
-    <code>https://www.google.es/search</code>, utilizando una conexión HTTPS.
+    La acción «Buscar» solo se ejecuta si el usuario la pulsa. En ese momento, la extensión usa la
+    API <code>chrome.search.query</code> para abrir una pestaña nueva con el buscador predeterminado
+    configurado en el navegador. El proveedor puede ser Google, Bing, DuckDuckGo u otro; lo elige el
+    usuario en la configuración de su navegador.
   </p>
   <p>
-    Como consecuencia de esa búsqueda, Google recibe la consulta y los datos técnicos habituales de
-    una petición web (por ejemplo, dirección IP, tipo de navegador y cookies propias de Google), de
-    acuerdo con su propia política de privacidad:
-    <a href="https://policies.google.com/privacy" rel="noopener noreferrer">https://policies.google.com/privacy</a>.
-    El desarrollador de la extensión no recibe, almacena ni tiene acceso a esa consulta ni a los
-    datos que Google pueda recoger.
+    Como consecuencia de esa búsqueda, el proveedor configurado recibe la consulta y los datos
+    técnicos habituales de una petición web (por ejemplo, dirección IP, tipo de navegador y cookies
+    propias del proveedor), de acuerdo con su propia política de privacidad. El desarrollador de la
+    extensión no recibe, almacena ni tiene acceso a esa consulta ni a los datos que el proveedor
+    pueda recoger.
   </p>
   <p>
-    Si el usuario no pulsa «Buscar en Google España», el texto seleccionado no sale del dispositivo.
-    La extensión no envía datos a servidores del desarrollador en ningún caso.
+    Si el usuario no pulsa «Buscar», el texto seleccionado no sale del dispositivo. Salvo el
+    formulario de soporte, que solo se envía al pulsar «Enviar mensaje», la extensión no transmite
+    datos a servidores del desarrollador.
   </p>
 
   <h2>5. Qué no hace la extensión</h2>
   <ul>
     <li>No usa analíticas, telemetría, publicidad ni rastreadores.</li>
-    <li>No usa cookies propias, almacenamiento local, bases de datos ni cuentas de usuario.</li>
+    <li>No usa cookies propias, bases de datos ni cuentas de usuario. Solo guarda localmente las preferencias de acciones descritas arriba.</li>
     <li>No vende, alquila ni comparte datos con terceros con fines comerciales.</li>
     <li>No ejecuta código remoto: todo el código está empaquetado en la extensión.</li>
     <li>No modifica el contenido de las páginas ni accede a formularios que el usuario no esté usando.</li>
@@ -199,6 +221,8 @@
   <ul>
     <li><strong><code>clipboardRead</code>:</strong> leer el portapapeles cuando el usuario pulsa «Pegar».</li>
     <li><strong><code>clipboardWrite</code>:</strong> escribir en el portapapeles cuando el usuario pulsa «Copiar» o «Cortar».</li>
+    <li><strong><code>storage</code>:</strong> guardar localmente qué acciones quieres mostrar en el menú. No se guarda texto ni historial.</li>
+    <li><strong><code>search</code>:</strong> consultar el buscador predeterminado del navegador cuando el usuario pulsa «Buscar».</li>
     <li>
       <strong>Acceso a páginas web (<code>&lt;all_urls&gt;</code>):</strong> el menú debe poder aparecer
       en cualquier página donde el usuario seleccione texto. El content script solo utiliza la
@@ -209,16 +233,33 @@
 
   <h2>7. Conservación y seguridad</h2>
   <p>
-    La extensión no almacena datos de usuario. La información existe solo en memoria durante la
-    operación solicitada y se descarta al terminar. Las comunicaciones con Google se realizan mediante
-    HTTPS. El código se distribuye empaquetado y no se cargan scripts remotos.
+    La extensión no almacena el texto que copias, cortas, borras o pegas, ni las selecciones o el historial
+    de navegación. Solo conserva en <code>chrome.storage.local</code> tus preferencias de acciones
+    (qué botones mostrar y en qué orden) hasta que las cambies, las restablezcas o desinstales la extensión. Las
+    comunicaciones con el buscador predeterminado se realizan mediante la API del navegador y HTTPS.
+    Los mensajes de soporte se envían por HTTPS a Web3Forms, que los reenvía por correo al
+    desarrollador y los conserva hasta tres años; no se guardan en la extensión. El código se
+    distribuye empaquetado y no se cargan scripts remotos.
   </p>
 
   <h2>8. Terceros</h2>
   <p>
-    El único tercero que puede recibir datos como consecuencia de una acción del usuario es Google,
-    cuando se pulsa «Buscar en Google España». La extensión no integra otros servicios, SDK de
-    analítica, redes publicitarias ni procesadores de pago.
+    El proveedor de búsqueda predeterminado del navegador recibe la consulta cuando el usuario pulsa
+    «Buscar», de acuerdo con su propia política de privacidad.
+  </p>
+  <p>
+    El formulario de «Soporte técnico» usa <strong>Web3Forms</strong>
+    (<code>web3forms.com</code>), un servicio de formularios que reenvía el mensaje al correo
+    <a href="mailto:accesapps@outlook.es">accesapps@outlook.es</a>. Cuando pulsas «Enviar mensaje»,
+    Web3Forms recibe el asunto, el mensaje y, si lo escribes, tu correo, y los procesa para hacer
+    llegar el mensaje al desarrollador. Web3Forms puede tratar datos técnicos habituales de la
+    petición, como la dirección IP, compartirlos con servicios antispam y conservar los envíos hasta
+    tres años, según su propia política. El desarrollador no usa estos datos para publicidad ni los
+    cede a otros terceros.
+  </p>
+  <p>
+    La extensión no integra otros servicios, SDK de analítica, redes publicitarias ni procesadores de
+    pago.
   </p>
 
   <h2>9. Uso limitado de datos</h2>
@@ -227,7 +268,8 @@
     menú flotante con acciones para el texto seleccionado. La información no se utiliza para
     publicidad personalizada, elaboración de perfiles, evaluación crediticia ni ningún fin no
     relacionado con esa función. No se vende ni se transfiere a terceros, salvo la consulta que el
-    usuario envía voluntariamente a Google al pulsar «Buscar en Google España».
+    usuario envía voluntariamente al proveedor de búsqueda predeterminado al pulsar «Buscar» y el
+    mensaje que el usuario decide enviar mediante el formulario de soporte.
   </p>
   <p>
     Estas prácticas son coherentes con la política de uso limitado de datos de Chrome Web Store y con
@@ -237,9 +279,11 @@
   <h2>10. Derechos y contacto</h2>
   <p>
     Como la extensión no almacena datos personales, el desarrollador no mantiene una base de datos
-    sobre la que ejercer derechos de acceso, rectificación o supresión. Si resides en el Espacio
+    sobre la que ejercer derechos de acceso, rectificación o supresión. Si has enviado un mensaje de
+    soporte, puedes solicitar su eliminación escribiendo a
+    <a href="mailto:accesapps@outlook.es">accesapps@outlook.es</a>. Si resides en el Espacio
     Económico Europeo o en otra jurisdicción con derechos de protección de datos, puedes contactar en
-    <a href="mailto:daniauro@Outlook.com">daniauro@Outlook.com</a> para plantear cualquier duda sobre
+    <a href="mailto:accesapps@outlook.es">accesapps@outlook.es</a> para plantear cualquier duda sobre
     esta política. También puedes presentar una reclamación ante la autoridad de protección de datos
     de tu país.
   </p>
@@ -255,47 +299,79 @@
   <p class="lang">English version below.</p>
 
   <h2>Privacy Policy (English)</h2>
-  <p class="updated">Last updated: November 7, 2026</p>
+  <p class="updated">Last updated: November 14, 2026</p>
   <p>
     <strong>Clipboard Context Menu</strong> is published by
-    <strong>Daniel Vidal Álvarez</strong>. Contact:
-    <a href="mailto:daniauro@Outlook.com">daniauro@Outlook.com</a>.
+    <strong>Access Apps Labs</strong>. Contact:
+    <a href="mailto:accesapps@outlook.es">accesapps@outlook.es</a>.
   </p>
   <p>
     The extension runs locally. It has no developer-operated servers, accounts, analytics, or
-    advertising. It does not store the text you copy, cut, or paste.
+    advertising. It does not store the text you copy, cut, delete, or paste. It only stores your
+    action preferences on the device. The optional support form sends your message through
+    Web3Forms, as explained below.
   </p>
   <ul>
     <li>
       <strong>Selected text:</strong> used to show the floating menu and, only when you choose it, to
-      copy, cut, or search the selected text on Google Spain.
+      copy, cut, delete, or search it with the browser’s default search engine.
     </li>
     <li>
-      <strong>Clipboard:</strong> read only when you click Paste, and written only when you click Copy
-      or Cut. The extension does not monitor the clipboard in the background or keep a history.
+      <strong>Clipboard:</strong> read only when you click Paste, and written only when you click Copy,
+      Cut, or Share page. The extension does not monitor the clipboard in the background or keep a
+      history.
     </li>
     <li>
-      <strong>Google search:</strong> when you click “Search on Google Spain”, the selected text is
-      sent to <code>https://www.google.es</code> over HTTPS as a search query. Google processes that
-      query under its own privacy policy:
-      <a href="https://policies.google.com/privacy" rel="noopener noreferrer">https://policies.google.com/privacy</a>.
-      The developer does not receive or store the query.
+      <strong>Page URL:</strong> read only when you click “Share page”, to copy the current tab URL
+      to the local clipboard. It is not sent to the developer or any server.
+    </li>
+    <li>
+      <strong>Action preferences:</strong> the settings panel stores which buttons you want to see and
+      in what order (Copy, Cut, Paste, Search, Share page, Delete) in
+      <code>chrome.storage.local</code>. This is configuration data; it does not contain copied text,
+      selections, history, or personal data.
+    </li>
+    <li>
+      <strong>Support message:</strong> if you use the “Technical support” form, the subject and
+      message you write, plus your email address only if you provide it, are sent when you click
+      “Send message”. They are used solely to reply to you or fix the reported issue.
+    </li>
+    <li>
+      <strong>Search:</strong> when you click “Search”, the extension uses
+      <code>chrome.search.query</code> to open a new tab with the browser’s default search provider.
+      The provider may be Google, Bing, DuckDuckGo, or another engine chosen by the user. The query
+      is processed under that provider’s privacy policy. The developer does not receive or store the
+      query.
     </li>
   </ul>
   <p>
-    The extension does not use analytics, telemetry, ads, tracking, cookies, local storage, or remote
-    code. It does not sell or share data. Its use of information is limited to providing the
-    extension’s single purpose: a floating menu of actions for selected text. The only third party
-    that may receive data is Google, and only when the user explicitly requests a search.
+    The extension does not use analytics, telemetry, ads, tracking, cookies, or remote code. It does
+    not sell or share data. Its only local storage is the action preferences described above. Its use
+    of information is limited to providing the extension’s single purpose: a floating menu of actions
+    for selected text. The third parties that may receive data are the browser’s default search
+    provider, only when the user explicitly requests a search, and Web3Forms, only when the user
+    chooses to send a support message.
+  </p>
+  <p>
+    The “Technical support” form uses <strong>Web3Forms</strong> (<code>web3forms.com</code>), a form
+    service, to forward the message to
+    <a href="mailto:accesapps@outlook.es">accesapps@outlook.es</a>. When you click “Send message”,
+    Web3Forms receives the subject, the message, and your email address if you provide one, and
+    processes them to deliver the message to the developer. Web3Forms may process standard request
+    data such as your IP address, share it with anti-spam services, and retain submissions for up to
+    three years under its own policy. The developer does not use this data for advertising or share
+    it with other third parties.
   </p>
   <p>
     Because the extension stores no personal data, there is no developer-held database to access,
-    correct, or delete. For privacy questions, contact
-    <a href="mailto:daniauro@Outlook.com">daniauro@Outlook.com</a>.
+    correct, or delete. Action preferences stay on the device and are removed when you reset the
+    settings or uninstall the extension. If you have sent a support message, you can ask for its
+    deletion by writing to <a href="mailto:accesapps@outlook.es">accesapps@outlook.es</a>. For privacy
+    questions, contact <a href="mailto:accesapps@outlook.es">accesapps@outlook.es</a>.
   </p>
 
   <footer>
-    © 2026 Daniel Vidal Álvarez. Todos los derechos reservados.
+    © 2026 Access Apps Labs. Todos los derechos reservados.
   </footer>
 </main>
 </body>
